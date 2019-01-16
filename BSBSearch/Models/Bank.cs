@@ -4,6 +4,9 @@ namespace BSBSearch.Models
 {
     public struct Bank
     {
+        // Add Regex for BSB
+        // Handle valid regex but no results returned.
+        [RegularExpression(@"^[0-9]{6}+", ErrorMessage = "Enter a valid 6 digit BSB Number")]
         public char[]  BSBNumber { get; set; }
         [Display(Name ="Bank Code")]
         public char[] Instcode { get; set; }
