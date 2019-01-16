@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -8,6 +9,7 @@ namespace BSBSearch.Models
     public class Bank
     {
         public string BSBNumber { get; set; }
+        [Display(Name ="Bank Name")]
         public string Instcode { get; set; }
         public string BranchName { get; set; }
         public string StreetAddress { get; set; }

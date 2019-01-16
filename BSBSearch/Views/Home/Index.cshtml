@@ -9,11 +9,31 @@
         @Html.ValidationSummary()
         @Html.DisplayNameFor(m => m.BSBNumber)
         @Html.EditorFor(m => m.BSBNumber)
-        
-        <input type="submit" />
 
-        @Html.DisplayNameFor(m => m.Instcode)
+        <input type="submit" />
+        <hr />
+
+        <b>@Html.DisplayNameFor(m => m.Instcode)</b>
+        <br />
         @Html.DisplayFor(m => m.Instcode)
+        <br />
+        <b>@Html.DisplayNameFor(m => m.StreetAddress)</b>
+        <br />
+        @Html.DisplayFor(m => m.StreetAddress)
+        <br />
+        <b>@Html.DisplayNameFor(m => m.Suburb)</b>
+        <br />
+        @Html.DisplayFor(m => m.Suburb)
+        <br />
+        <b>@Html.DisplayNameFor(m => m.State)</b>
+        <br />
+        @Html.DisplayFor(m => m.State)
+        <br />
+        <b>@Html.DisplayNameFor(m => m.Postcode)</b>
+        <br />
+        @Html.DisplayFor(m => m.Postcode)
+        <br />
+
     }
 </body>
 

@@ -17,7 +17,7 @@ namespace BSBSearch.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Index(Bank model)
+        public async Task<IActionResult> Index(Bank model)
         {
             if (!ModelState.IsValid)
             {
@@ -25,11 +25,9 @@ namespace BSBSearch.Controllers
             }
 
             BSBSearcher searcher = new BSBSearcher();
-            searcher.BSBQuery(model.BSBNumber);
+            await searcher.BSBQuery(model.BSBNumber);
             model = searcher.BankResult;
             model.Instcode = searcher.BankResult.Instcode;
-            Console.WriteLine("CONTROLLER INST CODE");
-            Console.WriteLine(model.Instcode);
             //model = searcher.SetBankData();
 
             return View(model);

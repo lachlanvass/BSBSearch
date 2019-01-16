@@ -16,7 +16,7 @@ namespace BSBSearch.Models
         HttpClient Client = new HttpClient();
         RootObject JsonObject = new RootObject();
 
-        public async void BSBQuery(String bsbNumber)
+        public async Task BSBQuery(String bsbNumber)
         {
             String requestUrl = APIString + bsbNumber + ".json";
             Console.WriteLine("Sending request to: " + requestUrl);
@@ -29,6 +29,9 @@ namespace BSBSearch.Models
                 Console.WriteLine("INSTCODE");
                 Console.WriteLine(JsonObject.data.instcode);
                 BankResult = new Bank(JsonObject.data);
+                Console.WriteLine("BankResult stuff");
+                Console.WriteLine(BankResult.Instcode);
+                
                 
             }
 
