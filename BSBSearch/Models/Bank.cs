@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace BSBSearch.Models
 {
-    public class Bank
+    public struct Bank
     {
         public string BSBNumber { get; set; }
-        [Display(Name ="Bank Name")]
+        [Display(Name ="Bank Code")]
         public string Instcode { get; set; }
+        [Display(Name ="Branch Name")]
         public string BranchName { get; set; }
+        [Display(Name = "Street Address")]
         public string StreetAddress { get; set; }
         public string Suburb { get; set; }
         public string State { get; set; }
         public string Postcode { get; set; }
         public string Peh { get; set; }
-
-        public Bank() { }
         public Bank(BankData data)
         {
             BSBNumber = data.bsbnumber;
