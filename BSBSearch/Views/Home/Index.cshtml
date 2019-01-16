@@ -1,0 +1,19 @@
+﻿@model BSBSearch.Models.Bank
+@{
+    ViewData["Title"] = "BSB Searcher";
+}
+
+<body>
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary()
+        @Html.DisplayNameFor(m => m.BSBNumber)
+        @Html.EditorFor(m => m.BSBNumber)
+        
+        <input type="submit" />
+
+        @Html.DisplayNameFor(m => m.Instcode)
+        @Html.DisplayFor(m => m.Instcode)
+    }
+</body>
+

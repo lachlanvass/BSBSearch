@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.168
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BSBSearch", "BSBSearch\BSBSearch.csproj", "{1EB60A95-BAAE-4595-89EF-8C639BE05F98}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1EB60A95-BAAE-4595-89EF-8C639BE05F98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EB60A95-BAAE-4595-89EF-8C639BE05F98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EB60A95-BAAE-4595-89EF-8C639BE05F98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EB60A95-BAAE-4595-89EF-8C639BE05F98}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {385F4BAD-7988-4847-A17D-2458E8E75E68}
+	EndGlobalSection
+EndGlobal
