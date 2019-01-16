@@ -1,34 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace BSBSearch.Models
 {
     public struct Bank
     {
-        public string BSBNumber { get; set; }
+        public char[]  BSBNumber { get; set; }
         [Display(Name ="Bank Code")]
-        public string Instcode { get; set; }
+        public char[] Instcode { get; set; }
         [Display(Name ="Branch Name")]
         public string BranchName { get; set; }
         [Display(Name = "Street Address")]
         public string StreetAddress { get; set; }
         public string Suburb { get; set; }
-        public string State { get; set; }
-        public string Postcode { get; set; }
-        public string Peh { get; set; }
+        public char[] State { get; set; }
+        public char[] Postcode { get; set; }
+        public char[] Peh { get; set; }
         public Bank(BankData data)
         {
-            BSBNumber = data.bsbnumber;
-            Instcode = data.instcode;
+            BSBNumber = data.bsbnumber.ToCharArray();
+            Instcode = data.instcode.ToCharArray();
             BranchName = data.branchname;
             StreetAddress = data.streetaddress;
             Suburb = data.suburb;
-            State = data.state;
-            Postcode = data.postcode;
-            Peh = data.peh;
+            State = data.state.ToCharArray();
+            Postcode = data.postcode.ToCharArray();
+            Peh = data.peh.ToCharArray();
         }
     }
 }

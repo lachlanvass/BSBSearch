@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using System.Net.Http;
+using System.Text;
 
 namespace BSBSearch.Models
 {
@@ -14,7 +15,12 @@ namespace BSBSearch.Models
 
         public async Task BSBQuery(String bsbNumber)
         {
-            String requestUrl = APIString + bsbNumber + ".json";
+            StringBuilder builder = new StringBuilder();
+            builder.Append(APIString);
+            builder.Append(bsbNumber);
+            builder.Append(".json");
+            //String requestUrl = APIString + bsbNumber + ".json";
+            String requestUrl = builder.ToString();
             Console.WriteLine("Sending request to: " + requestUrl);
             HttpResponseMessage result = await Client.GetAsync(requestUrl);
             if (result.IsSuccessStatusCode)
@@ -22,6 +28,23 @@ namespace BSBSearch.Models
                 String json = await result.Content.ReadAsStringAsync();
                 JsonObject = Newtonsoft.Json.JsonConvert.DeserializeObject<RootObject>(json);
                 BankResult = new Bank(JsonObject.data);   
+            }
+
+        }
+
+        public async Task BSBQuery(char[] bsbNumber)
+        {
+            StringBuilder builder = new StringBuilder();
+            builder.Append(APIString);
+            builder.Append(bsbNumber);
+            builder.Append(".json");
+            String requestUrl = builder.ToString();
+            HttpResponseMessage result = await Client.GetAsync(requestUrl);
+            if (result.IsSuccessStatusCode)
+            {
+                String json = await result.Content.ReadAsStringAsync();
+                JsonObject = Newtonsoft.Json.JsonConvert.DeserializeObject<RootObject>(json);
+                BankResult = new Bank(JsonObject.data);
             }
 
         }
