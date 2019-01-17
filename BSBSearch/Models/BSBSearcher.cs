@@ -45,14 +45,10 @@ namespace BSBSearch.Models
                 String json = await result.Content.ReadAsStringAsync();
                 JsonObject = Newtonsoft.Json.JsonConvert.DeserializeObject<RootObject>(json);
                 BankResult = new Bank(JsonObject.data);
+                
+                
             }
-            else
-            {
-                BankResult = new Bank()
-                {
-                    BranchName = "BSB Not Found"
-                };
-            }
+           
 
         }
 

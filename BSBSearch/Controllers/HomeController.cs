@@ -22,11 +22,30 @@ namespace BSBSearch.Controllers
             }
 
             BSBSearcher searcher = new BSBSearcher();
-            await searcher.BSBQuery(model.BSBNumber);
-            model = searcher.BankResult;
-            model.Instcode = searcher.BankResult.Instcode;
+            try
+            {
+                await searcher.BSBQuery(model.BSBNumber);
+                model = searcher.BankResult;
+                model.Instcode = searcher.BankResult.Instcode;
 
-            return View(model);
+                return View(model);
+            }
+            catch(System.NullReferenceException ex)
+            {
+                char[] pholder = new char[3] { '-', '-', '-' };
+                model = new Bank()
+                {
+                    Instcode = pholder,
+                    BranchName = "***INVALID BSB***",
+                    StreetAddress = "---",
+                    Suburb = "---",
+                    State = pholder,
+                    Postcode = pholder
+                };
+
+                return View(model);
+            }
+
         }
 
 

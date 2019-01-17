@@ -6,8 +6,9 @@
 <body>
     @using (Html.BeginForm())
     {
-        @Html.ValidationSummary()
-        @Html.DisplayNameFor(m => m.BSBNumber)
+        <p style="color: red">@Html.ValidationSummary() </p>
+        <b>@Html.DisplayNameFor(m => m.BSBNumber)</b>
+        <br />
         @Html.EditorFor(m => m.BSBNumber)
 
         <input type="submit" />
